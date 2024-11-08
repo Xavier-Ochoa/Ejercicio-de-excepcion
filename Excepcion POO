@@ -1,0 +1,25 @@
+public class Main {
+    public static void main(String[] args) {
+        // Definimos una cadena que contiene caracteres no numéricos
+        // En este caso, la cadena tiene un número ("123") seguido de una letra ("a")
+        String numero = "123a";  // El texto contiene una letra, por lo que no es un número válido
+
+        try {
+            // Intentamos convertir la cadena a un entero utilizando el método Integer.parseInt()
+            // Integer.parseInt() toma una cadena y la convierte a un número entero (int)
+            // Si la cadena contiene caracteres no numéricos, lanzará una excepción NumberFormatException
+            int resultado = Integer.parseInt(numero);
+            
+            // Si la conversión es exitosa, imprimimos el resultado
+            System.out.println("Resultado: " + resultado);
+        } catch (NumberFormatException e) {
+            // Capturamos la excepción NumberFormatException en caso de que ocurra
+            // Esto sucede cuando la cadena no es un número válido (por ejemplo, contiene letras o símbolos)
+            System.out.println("Error: Formato de número no válido.");
+        }
+
+        // Este mensaje se imprime independientemente de si ocurre o no la excepción
+        // Nos asegura que el programa sigue ejecutándose después de manejar la excepción
+        System.out.println("Programa terminado.");
+    }
+}
